@@ -12,7 +12,8 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-
+  entry_points:
+    - flatten_json = flatten_json:cli
 requirements:
   host:
     - python
@@ -30,7 +31,7 @@ test:
     - flatten_json
   commands:
      - pip check
-
+     - flatten_json --help
 about:
   home: https://github.com/amirziai/flatten
   license: MIT
